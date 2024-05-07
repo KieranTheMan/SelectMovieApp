@@ -1,0 +1,34 @@
+import './Style.css'
+import viteLogo from '/vite.svg'
+
+function App() {
+  return (
+    <>
+      <div className='background'>
+        <div>
+            <img src={viteLogo} alt="Vite logo" />
+            <h1>PopChoice</h1>
+        </div>
+            <div className='textboxstyle'>
+              <p>What's Your Favorite Movie And Why ?</p>
+                <textarea  name='userInput' maxlength="115" placeholder='The block Because it taught me to never give up hope no matter how hard life gets' />
+            </div>
+            <div>
+              <p> Are You Feeling A New or Classic Movie ?</p>
+                <textarea name='userInput' defaultValue='I whant to watch movies that was realsed in 2020' rows={4} cols={4}/>
+            </div>
+            <div>
+              <p> Do you wanna have fun or do you want something serious?</p>
+                <textarea name='userInput' defaultValue='I whant to wwatch somthing stupid and fun' rows={4} cols={4}/>
+            </div>
+                  <div>
+                    <button>
+
+                    </button>
+                  </div>
+    </div>
+    </>
+  )
+}
+
+export default App
