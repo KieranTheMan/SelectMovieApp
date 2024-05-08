@@ -1,31 +1,13 @@
-import './Style.css'
-import logo from '/MovieSelektLogo.svg'
+
+
+import Start from './Start.jsx'
+import AiResponse from './AiResponse.jsx'
+
 
 function App() {
   return (
     <>
-      <div className='background'>
-        <div>
-            <img src={logo} alt="movie logo" />
-        </div>
-            <div className='textboxstyle'>
-              <p>What's Your Favorite Movie And Why?</p>
-                <textarea  name='userInput' maxlength="115" placeholder='The block Because it taught me to never give up hope no matter how hard life gets' />
-            </div>
-            <div>
-              <p> Are You Feeling A New or Classic Movie?</p>
-                <textarea name='userInput' maxlength="115" placeholder='I whant to watch movies that was realsed in 2020'/>
-            </div>
-            <div>
-              <p> Do You Want To Have Fun Or Serious?</p>
-                <textarea name='userInput' maxlength="115" placeholder='I whant to wwatch somthing stupid and fun'/>
-            </div>
-                  <div style={{paddingTop: 20 }}>
-                    <button className='button-53'>
-                        Let's Go
-                    </button>
-                  </div>
-        </div>
+     <AiResponse/>
     </>
   )
 }

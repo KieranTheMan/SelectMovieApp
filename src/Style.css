@@ -53,14 +53,12 @@ textarea:focus {
   border-color: rgb(211, 144, 0);
 }
 
-
-
-
 textarea::placeholder {
   font-size: 0.8rem;
   color: #9c9c9c;
   font-family:"Lato", sans-serif;
   font-style: normal;
+  
 }
 
 
