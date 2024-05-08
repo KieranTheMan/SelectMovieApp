@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+h1 {
+  font-family: "Poetsen One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 p {
-font-family: ui-serif;
-font-weight: 600;
-text-wrap: wrap;
-text-align: left;
-margin-left: 5%;
-margin-right: 5%;
--webkit-font-smoothing: auto;
--moz-osx-font-smoothing: auto;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-wrap: wrap;
+  text-align: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
 }
 
 textarea {
@@ -22,7 +32,9 @@ textarea {
   text-align: left;
   width: 18rem;
   height: 50px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 400px;
+  font-style: normal;
   outline: none;
   border-radius: 0.375rem;
   padding: 0.4rem;
@@ -34,9 +46,10 @@ textarea:focus {
 }
 
 textarea::placeholder {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #9c9c9c;
-  font-family: 'Roboto', sans-serif;
+  font-family:"Lato", sans-serif;
+  font-style: normal;
 }
 
 
@@ -75,9 +88,9 @@ body {
   box-sizing: border-box;
   color: #000000;
   display: flex;
-  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: "Poetsen One", sans-serif,ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 200;
   justify-content: center;
   line-height: 1.75rem;
   padding: .75rem 1.65rem;
@@ -129,7 +142,7 @@ body {
   }
 
   .background {
-    width: 90%; /* The width is 100%, when the viewport is 800px or smaller */
+    width: 90%; 
     
   }
 

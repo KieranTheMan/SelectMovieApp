@@ -7,7 +7,7 @@ function App() {
       <div className='background'>
         <div>
             <img src={viteLogo} alt="Vite logo" />
-            <h1>MovieSelect</h1>
+            <h1>MovieSelekt</h1>
         </div>
             <div className='textboxstyle'>
               <p>What's Your Favorite Movie And Why?</p>
@@ -18,7 +18,7 @@ function App() {
                 <textarea name='userInput' maxlength="115" placeholder='I whant to watch movies that was realsed in 2020'/>
             </div>
             <div>
-              <p> Do You Want To Have Fun Or Be Serious?</p>
+              <p> Do You Want To Have Fun Or Serious?</p>
                 <textarea name='userInput' maxlength="115" placeholder='I whant to wwatch somthing stupid and fun'/>
             </div>
                   <div style={{paddingTop: 20 }}>
