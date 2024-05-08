@@ -7,7 +7,10 @@ import AiResponse from './AiResponse.jsx'
 function App() {
   return (
     <>
-     <AiResponse/>
+      <Routes>
+        <Route path='/' element={<Start/>}/>
+        <Route path='response' element={<AiResponse/>}/>
+      </Routes>
     </>
   )
 }
