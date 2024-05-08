@@ -1,13 +1,12 @@
 import './Style.css'
-import viteLogo from '/vite.svg'
+import logo from '/MovieSelektLogo.svg'
 
 function App() {
   return (
     <>
       <div className='background'>
         <div>
-            <img src={viteLogo} alt="Vite logo" />
-            <h1>MovieSelekt</h1>
+            <img src={logo} alt="movie logo" />
         </div>
             <div className='textboxstyle'>
               <p>What's Your Favorite Movie And Why?</p>

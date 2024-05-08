@@ -3,7 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+img {
+  width: 60% ;
+  height: 60%;
+  margin: -10%;
+}
 
 
 h1 {
@@ -44,7 +48,13 @@ textarea {
 
 textarea:focus {
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgb(211, 144, 0);
 }
+
+
+
 
 textarea::placeholder {
   font-size: 0.8rem;
@@ -64,7 +74,7 @@ box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 border-radius: 1rem;
 height: 80%;
 margin: auto;
-margin-top: 5%;
+margin-top: 2%;
 text-align: center;
 width: 22%;
 padding-bottom: 40px;
@@ -76,6 +86,7 @@ body {
   background-image: url("MovieWallpaper.jpg");
   background-color: rgb(0, 204, 255);
   user-select: none;
+  margin: auto;
 }
 
 
@@ -142,6 +153,7 @@ body {
     margin-left: 1%;
     margin-right: 1%;
     width: 16rem;
+   
   }
 
   .background {
