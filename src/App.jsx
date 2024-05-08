@@ -10,15 +10,15 @@ function App() {
             <h1>MovieSelect</h1>
         </div>
             <div className='textboxstyle'>
-              <p>What's Your Favorite Movie And Why ?</p>
+              <p>What's Your Favorite Movie And Why?</p>
                 <textarea  name='userInput' maxlength="115" placeholder='The block Because it taught me to never give up hope no matter how hard life gets' />
             </div>
             <div>
-              <p> Are You Feeling A New or Classic Movie ?</p>
+              <p> Are You Feeling A New or Classic Movie?</p>
                 <textarea name='userInput' maxlength="115" placeholder='I whant to watch movies that was realsed in 2020'/>
             </div>
             <div>
-              <p> Do you wanna have fun or do you want something serious?</p>
+              <p> Do You Want To Have Fun Or Be Serious?</p>
                 <textarea name='userInput' maxlength="115" placeholder='I whant to wwatch somthing stupid and fun'/>
             </div>
                   <div style={{paddingTop: 20 }}>
