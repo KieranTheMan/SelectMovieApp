@@ -1,12 +1,15 @@
+import { useNavigate } from 'react-router-dom';
 import './Style.css'
 import logo from '/MovieSelektLogo.svg'
 
+
 function Start() {
+const navigate = useNavigate();
   return (
     <>
       <div className='background'>
         <div>
-            <img src={logo} alt="movie logo" />
+            <img src={logo} alt="movie logo"/>
         </div>
             <div>
               <p>What's Your Favorite Movie And Why?</p>
@@ -21,7 +24,7 @@ function Start() {
                 <textarea name='userInput' maxlength="115" placeholder='I whant to wwatch somthing stupid and fun'/>
             </div>
                   <div style={{paddingTop: 20 }}>
-                    <button className='button-53'>
+                    <button className='button-53' onClick={() => navigate('response')}>
                         Let's Go
                     </button>
                   </div>
