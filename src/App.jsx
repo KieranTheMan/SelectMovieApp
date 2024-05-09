@@ -1,5 +1,5 @@
 
-import { Router, Routes, Route } from 'react-router-dom'
+import {Routes, Route } from 'react-router-dom'
 import Start from './Start.jsx'
 import AiResponse from './AiResponse.jsx'
 
