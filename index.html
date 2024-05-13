@@ -14,8 +14,7 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/Index.jsx"></script>
-    
-    <div id="app"><!--ssr-outlet--></div>
-    <script type="module" src="/src/entry-client.js"></script>
+    <div id="app" style='content-visibility:hidden;'><!--ssr-outlet--></div>
+    <script type="module" src="/src/entry-client.jsx"></script>
   </body>
 </html>
