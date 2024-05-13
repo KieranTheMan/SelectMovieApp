@@ -1,13 +1,15 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import getEmbedding from './Embedding.js'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { createServer as createViteServer } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PORT = 8000;
+const app = express()
 async function createServer() {
-  const app = express()
+  
 
   // Create Vite server in middleware mode and configure the app type as
   // 'custom', disabling Vite's own HTML serving logic so parent server
@@ -62,8 +64,12 @@ async function createServer() {
       next(e)
     }
   })
- console.log('hello')
+
+  console.log('hello')
   app.listen(PORT, () => console.log('Your server is running on PORT' + PORT));
 }
-
 createServer()
+
+
+//Embedding 
+app.use('/', getEmbedding);
