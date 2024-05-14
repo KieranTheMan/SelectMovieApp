@@ -1,6 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import getEmbedding from './Embedding.js'
+import query from './queryEmbedding.js'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { createServer as createViteServer } from 'vite'
@@ -71,5 +72,7 @@ async function createServer() {
 createServer()
 
 
-//Embedding 
+//Embedding MovieList and updates supabase database
 app.use('/', getEmbedding);
+//Search Query
+app.use('/', query);
