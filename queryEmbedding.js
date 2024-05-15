@@ -2,7 +2,7 @@ import { openai, supabase } from './config.js';
 import express from 'express';
 
 const app = express()
-const query = "Watch somthing fun";
+const query = "I want to watch somthing happy and fun";
 
 
 export default app.get('/query',async(req,res) => {
@@ -22,7 +22,7 @@ export default app.get('/query',async(req,res) => {
                 match_threshold: 0.50,
                 match_count: 1
             });
-            console.log(data);
+            console.log(data[0].content);
         }
         main(query)
 });
