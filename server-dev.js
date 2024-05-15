@@ -72,7 +72,7 @@ async function createServer() {
 createServer()
 
 
-//Embedding MovieList and updates supabase database
+//TextSplit & Embedding MovieList and updates supabase database
 app.use('/', getEmbedding);
-//Search Query
+//User Search Query & AI ....
 app.use('/', query);

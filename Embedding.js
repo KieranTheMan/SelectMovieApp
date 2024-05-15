@@ -1,31 +1,45 @@
-import { openai } from './config.js';
-import { supabase } from './config.js'
+import { openai, supabase } from './config.js'
+import {RecursiveCharacterTextSplitter} from 'langchain/text_splitter'
 import express from 'express';
-import  content from './content.js';
+import readTxtFile from './readTxtFile.js';
 
+const movieTxt = readTxtFile('./movies.txt')
 const app = express()
+
 export default app.get('/getEmbedding',async(req,res) => {
-  
-  async function main(input) {
-    const data = await Promise.all(
-      input.map( async (movieText) => {
-          const embeddingResponse = await openai.embeddings.create({
-              model: "text-embedding-ada-002",
-              input: JSON.stringify(movieText)
-          });
-          return { 
-            content: movieText, 
-            embedding: embeddingResponse.data[0].embedding 
-          }
-      })
-    );
 
-    await supabase.from('movielist').insert(data); 
-    console.log('Embedding and storing complete!');
-  }
-  main(content)
+      async function splitDocument(document) {
+        const text = await document
+        const splitter = new RecursiveCharacterTextSplitter({
+          chunkSize: 150,
+          chunkOverlap: 15,
+        });
+        const output = await splitter.createDocuments([text]);
+        return output 
+      }
+
+      async function CreateAndStoreEmbeddings() {
+        const chunkData = await splitDocument(movieTxt)
+        const data = await Promise.all(
+          chunkData.map( async (chunk) => {
+              const embeddingResponse = await openai.embeddings.create({
+                  model: "text-embedding-ada-002",
+                  input: chunk.pageContent
+              });
+              return {
+                content: chunk.pageContent, 
+                embedding: embeddingResponse.data[0].embedding 
+              }
+          })
+        );
+        
+        await supabase.from('movielist').insert(data); 
+        console.log('Embedding and storing complete!');
+      }
+
+      CreateAndStoreEmbeddings()
 })
-
+  
             
         
 
