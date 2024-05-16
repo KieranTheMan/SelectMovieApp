@@ -11,8 +11,8 @@ export default app.get('/getEmbedding',async(req,res) => {
       async function splitDocument(document) {
         const text = await document
         const splitter = new RecursiveCharacterTextSplitter({
-          chunkSize: 150,
-          chunkOverlap: 15,
+          chunkSize: 250,
+          chunkOverlap: 35,
         });
         const output = await splitter.createDocuments([text]);
         return output 
@@ -33,7 +33,7 @@ export default app.get('/getEmbedding',async(req,res) => {
           })
         );
         
-        await supabase.from('movielist').insert(data); 
+        await supabase.from('movies').insert(data); 
         console.log('Embedding and storing complete!');
       }
 
