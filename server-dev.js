@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import getEmbedding from './Embedding.js'
-import query from './queryEmbedding.js'
+import query from './query.js'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { createServer as createViteServer } from 'vite'
