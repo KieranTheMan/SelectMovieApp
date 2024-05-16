@@ -1,7 +1,9 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import getEmbedding from './Embedding.js'
+import bodyParser from 'body-parser'
 import query from './query.js'
+import cors from 'cors'
 import { fileURLToPath } from 'node:url'
 import express from 'express'
 import { createServer as createViteServer } from 'vite'
@@ -68,6 +70,7 @@ async function createServer() {
 
   console.log('hello')
   app.listen(PORT, () => console.log('Your server is running on PORT' + PORT));
+
 }
 createServer()
 
@@ -76,3 +79,15 @@ createServer()
 app.use('/', getEmbedding);
 //User Search Query & AI ....
 app.use('/', query);
+
+const corsOptions = {
+  origin: "http://localhost:5173",
+};
+
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
+app.post('/userquery',async(req,res) => {
+  const query = req.body // access the data sent from the client
+  console.log(query)
+  res.json({message:"query submited"})
+})
