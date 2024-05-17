@@ -11,7 +11,8 @@ const navigate = useNavigate();
             <img src={logo} alt="movie logo" />
         </div>
             <div>
-                <textarea  name='userInput'/>
+              
+                <p id='aimessage'></p>
             </div>
                   <div style={{paddingTop: 20 }}>
                     <button className='button-53' onClick={() => navigate('/')}>
