@@ -7,6 +7,7 @@ import logo from '/MovieSelektLogo.svg'
 function Start() {
 const navigate = useNavigate();
 const [query, setQuery] = useState('')
+
 console.log(query)
 
 
@@ -25,7 +26,7 @@ const getResponse = async () => {
           }
           const GPTResponse = await response.json();
           console.log(`client response ${GPTResponse.message}`);
-
+          document.getElementById('aimessage').innerHTML = GPTResponse.message; 
           } catch (error) {
           console.error('Error:', error)
       }
