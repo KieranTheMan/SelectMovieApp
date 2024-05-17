@@ -1,12 +1,21 @@
 import { openai, supabase } from './config.js';
 import express from 'express';
+import cors from 'cors'
+import bodyParser from 'body-parser';
 
 const app = express()
-const query = "recommend me 3 movies to watch?";
+const corsOptions = {
+    origin: "http://localhost:5173",
+  };
 
+app.use(cors(corsOptions));
+app.use(bodyParser.json());
 
-export default app.get('/query',async(req,res) => {
-    
+export default app.post('/userquery',async(req,res) => {
+
+    const query = await req.body.Query
+    main(query);
+
     async function main(input) {
         const embedding = await createEmbedding(input)
         const match = await findNearestMatch(embedding)
@@ -25,7 +34,7 @@ export default app.get('/query',async(req,res) => {
             const { data } = await supabase.rpc('match_movies', {
                 query_embedding: embedding,
                 match_threshold: 0.50,
-                match_count: 4
+                match_count: 1
             });
             const match = data.map(obj => obj.content).join();
             return match
@@ -50,7 +59,7 @@ export default app.get('/query',async(req,res) => {
               frequency_penalty: 0.5
             });
             console.log(response.choices[0].message.content);
+            res.json({message: response.choices[0].message.content})
         }
-
-        main(query);
 });
+
