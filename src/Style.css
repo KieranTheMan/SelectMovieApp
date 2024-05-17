@@ -8,7 +8,17 @@ img {
   height: 60%;
   margin: -10%;
 }
+#aimessage {
 
+  border: 2px solid plum;
+  border-spacing: 20px;
+  border-radius: 5%;
+  border-style:dashed;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right:10px;
+  padding-bottom: 10px;
+}
 
 h1 {
   font-family: "Poetsen One", sans-serif;
