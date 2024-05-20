@@ -6,15 +6,20 @@ import logo from '/MovieSelektLogo.svg'
 
 function Start() {
 const navigate = useNavigate();
-const [query, setQuery] = useState('')
+const [query1, setQuery1] = useState('');
+const [query2, setQuery2] = useState('');
+const [query3, setQuery3] = useState('');
 
-console.log(query)
+let mainQuery = `${query1}, ${query2}, ${query3}`;
+
+console.log(mainQuery)
+{}
 
 
 const getResponse = async () => {
   const options = { 
     method: "POST",
-    body: JSON.stringify({Query:query}),
+    body: JSON.stringify({Query:query1}),
     headers:{
     "Content-Type":"application/json"
     }
@@ -24,9 +29,11 @@ const getResponse = async () => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-          const GPTResponse = await response.json();
-          console.log(`client response ${GPTResponse.message}`);
-          document.getElementById('aimessage').innerHTML = GPTResponse.message; 
+          const {image, message} = await response.json();
+          console.log(`client text response ${message}`);
+          //document.getElementById('aimessage').innerHTML = GPTResponse.message;
+          console.log(`client IMAGE response ${image}`)
+          
           } catch (error) {
           console.error('Error:', error)
       }
@@ -39,22 +46,35 @@ const getResponse = async () => {
             <img src={logo} alt="movie logo"/>
         </div>
             <div>
-              <p>What's Your Favorite Movie And Why?</p>
+              <p>What's your favorite movie and why?</p>
                 <textarea 
                   name='userInput' 
-                  value={query}
-                  onChange={(e => setQuery(e.target.value))} 
+                  value={query1}
+                  onChange={(e => setQuery1(e.target.value))} 
                   maxLength="115"
                   placeholder='The block Because it taught me to never give up hope no matter how hard life gets'
                 />
             </div>
             <div>
-              <p> Are You Feeling A New or Classic Movie?</p>
+              <p> Are you in the mood for A New or Classic movie?</p>
+              <textarea 
+                name='userInput'
+                value={query2}
+                onChange={(e => setQuery2(e.target.value))}  
+                maxLength="115" 
+                placeholder='I whant to watch somthing silly and fun'
+                />
              
             </div>
             <div>
-              <p> Do You Want To Have Fun Or Serious?</p>
-                <textarea name='userInput' maxLength="115" placeholder='I whant to wwatch somthing stupid and fun'/>
+              <p> Do you want A fun or serious movie?</p>
+                <textarea 
+                name='userInput'
+                value={query3}
+                onChange={(e => setQuery3(e.target.value))}  
+                maxLength="115" 
+                placeholder='I whant to watch somthing silly and fun'
+                />
             </div>
                   <div style={{paddingTop: 20 }}>
                     <button 
