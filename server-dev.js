@@ -2,9 +2,13 @@ import fs from 'node:fs'
 import path from 'node:path'
 import express from 'express'
 import getEmbedding from './Embedding.js'
+import bodyParser from 'body-parser';
 import query from './query.js'
+import { MovieDb } from 'moviedb-promise'
+import dotenv from 'dotenv'
 import { fileURLToPath } from 'node:url'
 import { createServer as createViteServer } from 'vite'
+
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const PORT = 8000;
@@ -77,4 +81,3 @@ createServer()
   app.use('/', getEmbedding);
   //User Search Query & AI ....
   app.use('/', query);
-
