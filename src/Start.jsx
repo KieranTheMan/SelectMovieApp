@@ -13,7 +13,6 @@ const [query3, setQuery3] = useState('');
 let mainQuery = `${query1}, ${query2}, ${query3}`;
 
 console.log(mainQuery)
-{}
 
 
 const getResponse = async () => {
@@ -31,12 +30,27 @@ const getResponse = async () => {
           }
           const {image, message} = await response.json();
           console.log(`client text response ${message}`);
-          //document.getElementById('aimessage').innerHTML = GPTResponse.message;
+          document.getElementById('aimessage').innerHTML = message;
           console.log(`client IMAGE response ${image}`)
+          //document.getElementById('aiimage').innerHTML = image;
+          
+          // The base URL for TMDb images
+          const baseImageUrl = 'https://image.tmdb.org/t/p/w500';
+          const imageUrl = `${baseImageUrl}${image}`;
+          const imgElement = document.createElement('img');
+          imgElement.src = imageUrl;
+
+          const container = document.getElementById('aiimage');
+          container.appendChild(imgElement);
+          
+
+
           
           } catch (error) {
           console.error('Error:', error)
+          
       }
+      
 }
 
   return (
