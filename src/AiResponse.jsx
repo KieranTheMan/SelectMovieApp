@@ -8,10 +8,10 @@ const navigate = useNavigate();
     <>
       <div className='background'>
         <div>
-            <img src={logo} alt="movie logo" />
+            <img id='logo' src={logo} alt="movie logo" />
         </div>
             <div>
-              
+                <div id='aiimage'/>
                 <p id='aimessage'></p>
             </div>
                   <div style={{paddingTop: 20 }}>
