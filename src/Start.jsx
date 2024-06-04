@@ -28,24 +28,22 @@ const getResponse = async () => {
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
-          const {image, message} = await response.json();
+          const {title, image, message} = await response.json();
           console.log(`client text response ${message}`);
           document.getElementById('aimessage').innerHTML = message;
           console.log(`client IMAGE response ${image}`)
-          //document.getElementById('aiimage').innerHTML = image;
+          document.getElementById('aiTitle').innerHTML = title;
           
           // The base URL for TMDb images
-          const baseImageUrl = 'https://image.tmdb.org/t/p/w500';
+          const baseImageUrl = 'https://image.tmdb.org/t/p/w300';
           const imageUrl = `${baseImageUrl}${image}`;
           const imgElement = document.createElement('img');
           imgElement.src = imageUrl;
+          imgElement.style.margin= auto;
+
 
           const container = document.getElementById('aiimage');
           container.appendChild(imgElement);
-          
-
-
-          
           } catch (error) {
           console.error('Error:', error)
           
@@ -55,12 +53,14 @@ const getResponse = async () => {
 
   return (
     <>
-      <div className='background'>
-        <div>
-            <img src={logo} alt="movie logo"/>
-        </div>
+      
+      <div className='userInterfaceBG'>
+       
+            <img className='logo' src={logo} alt="movie logo"/>
+      
+        <div  className='textBoxes'>
             <div>
-              <p>What's your favorite movie and why?</p>
+              <p className='start-p'>What's your favorite movie and why?</p>
                 <textarea 
                   name='userInput' 
                   value={query1}
@@ -70,7 +70,7 @@ const getResponse = async () => {
                 />
             </div>
             <div>
-              <p> Are you in the mood for A New or Classic movie?</p>
+              <p className='start-p'> Are you in the mood for A New or Classic movie?</p>
               <textarea 
                 name='userInput'
                 value={query2}
@@ -81,7 +81,7 @@ const getResponse = async () => {
              
             </div>
             <div>
-              <p> Do you want A fun or serious movie?</p>
+              <p className='start-p'> Do you want A fun or serious movie?</p>
                 <textarea 
                 name='userInput'
                 value={query3}
@@ -90,8 +90,10 @@ const getResponse = async () => {
                 placeholder='I whant to watch somthing silly and fun'
                 />
             </div>
-                  <div style={{paddingTop: 20 }}>
-                    <button 
+          </div>
+                 
+                    <button
+                    style={{paddingTop: 20} }
                       className='button-53' 
                       onClick={() => {
                       getResponse()
@@ -99,7 +101,7 @@ const getResponse = async () => {
                     >
                         Let's Go
                     </button>
-                  </div>
+                
         </div>
     </>
   )
