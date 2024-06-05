@@ -8,11 +8,12 @@ function Start() {
 const navigate = useNavigate();
 const [query1, setQuery1] = useState('');
 const [moodIdx, setMoodIdx] = useState(0);
+const [genreIdx, setgenreIdx] = useState(0);
 const [query2, setQuery2] = useState('');
 
-
+const genres = ['Action', 'Comedy', 'Animation', 'Mystery', 'Drama', 'Fantasy', 'Horror'];
 const moods = ['Fun', 'Serious', 'Inspiring', 'Scary'];
-let mainQuery = `${query1}, I want to watch somthing ${moods[moodIdx]}, I want to watch a ${query2} movie`;
+let mainQuery = `${query1}, I want to watch somthing ${moods[moodIdx]}, I want to watch a ${query2} movie, I like ${genres[genreIdx]} movies`;
 
 const [isToggled, setIsToggled] = useState(false);
 
@@ -40,6 +41,12 @@ const buttonChange=()=>{
 const moodChange = () => {
   setMoodIdx((prevMoodIdx) => (prevMoodIdx + 1) % moods.length);
 }
+
+const genreChange = () => {
+  setgenreIdx((prevGenreIdx) => (prevGenreIdx + 1) % genres.length);
+}
+
+
 
 //console.log(mainQuery)
 
@@ -107,6 +114,11 @@ const getResponse = async () => {
               <p className='start-p'> What are you in the mood for ?</p>
               <button onClick= {moodChange} className={`mood-button ${moodColor}`}>
                 {moods[moodIdx]}
+              </button>
+
+              <p className='start-p'> What movie genres do you like ?</p>
+              <button onClick= {genreChange} className={'genre-button'}>
+                {genres[genreIdx]}
               </button>
              
             </div>
