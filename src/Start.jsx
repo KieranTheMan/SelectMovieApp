@@ -7,12 +7,41 @@ import logo from '/MovieSelektLogo.svg'
 function Start() {
 const navigate = useNavigate();
 const [query1, setQuery1] = useState('');
+const [moodIdx, setMoodIdx] = useState(0);
 const [query2, setQuery2] = useState('');
-const [query3, setQuery3] = useState('');
 
-let mainQuery = `${query1}, ${query2}, ${query3}`;
 
-console.log(mainQuery)
+const moods = ['Fun', 'Serious', 'Inspiring', 'Scary'];
+let mainQuery = `${query1}, I want to watch somthing ${moods[moodIdx]}, I want to watch a ${query2} movie`;
+
+const [isToggled, setIsToggled] = useState(false);
+
+
+let moodColor; 
+switch(moodIdx) {
+  case 0:
+    moodColor = 'Fun';
+    break
+  case 1:
+    moodColor = 'Serious';
+    break
+  case 2:
+    moodColor = 'Inspiring';
+    break
+  case 3:
+    moodColor = 'Scary';
+}
+
+console.log(moodColor)
+const buttonChange=()=>{
+    setIsToggled(!isToggled);
+    !isToggled ? setQuery2('im in the mood for a New movie') : setQuery2('im in the mood for a Classic movie');
+}
+const moodChange = () => {
+  setMoodIdx((prevMoodIdx) => (prevMoodIdx + 1) % moods.length);
+}
+
+//console.log(mainQuery)
 
 
 const getResponse = async () => {
@@ -71,25 +100,17 @@ const getResponse = async () => {
             </div>
             <div>
               <p className='start-p'> Are you in the mood for A New or Classic movie?</p>
-              <textarea 
-                name='userInput'
-                value={query2}
-                onChange={(e => setQuery2(e.target.value))}  
-                maxLength="115" 
-                placeholder='I whant to watch somthing silly and fun'
-                />
+              <button onClick={buttonChange} className={`toggle-button ${isToggled ? 'new' : 'classic'}`}>
+              {isToggled ? 'New' : 'Classic'}
+              </button>
+
+              <p className='start-p'> What are you in the mood for ?</p>
+              <button onClick= {moodChange} className={`mood-button ${moodColor}`}>
+                {moods[moodIdx]}
+              </button>
              
             </div>
-            <div>
-              <p className='start-p'> Do you want A fun or serious movie?</p>
-                <textarea 
-                name='userInput'
-                value={query3}
-                onChange={(e => setQuery3(e.target.value))}  
-                maxLength="115" 
-                placeholder='I whant to watch somthing silly and fun'
-                />
-            </div>
+        
           </div>
                  
                     <button
