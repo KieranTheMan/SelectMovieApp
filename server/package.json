@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "node ./server-dev.js"
+    "server": "node ./index.js"
   },
   "dependencies": {
     "@langchain/textsplitters": "^0.0.0",
