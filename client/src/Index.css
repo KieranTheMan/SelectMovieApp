@@ -2,118 +2,118 @@
 @tailwind components;
 @tailwind utilities;
 
-  /* MAIN START PAGE CSS */
-  .logo {
-    margin-bottom: -12%;
-    max-height: 100%;
-    max-width: 100%;
-  }
-  
-  img {
-    border-radius: 10%;
-  }
-  
-  
-  .visable-content {
-    transition: opacity 0.2s ease-in-out;
-  }
-  
-  .hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  
-  textarea {
-    flex-shrink: 8;
-    box-sizing: border-box;
-    resize: none;
-    text-wrap: wrap;
-    text-align: left;
-    width: 100%;
-    height: 80px;
-    font-family: "Lato", sans-serif;
-    outline: none;
-    border-radius: 0.375rem;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  }
-  
-  textarea:focus {
-    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-    border-style: solid;
-    border-width: 4px;
-    border-color: rgb(211, 144, 0);
-  }
-  
-  textarea::placeholder {
-    font-size: 0.8rem;
-    color: #9c9c9c;
-    font-family: "Lato", sans-serif;
-    font-style: normal;
-  
-  }
- /* MAIN START PAGE CSS - END SECTION */
- 
-  .bg-custom {
-    background-image: url('MovieWallpaper.jpg');
-    background-size: cover; /* or 'contain' based on your need */
-    background-position: center; /* Center the image */
-  }
-  
-  
-  /* Styled Button for Submit*/
-  .button-53 {
-    align-self: flex-end;
-    background-color: #3de7a9;
-    border: 0 solid #E5E7EB;
-    border-radius: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 4rem;
-    box-sizing: border-box;
-    color: #000000;
-    display: flex;
-    font-family: "Poetsen One", sans-serif, ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1.5rem;
-    font-weight: 200;
-    justify-content: center;
-    line-height: 1.75rem;
-    padding: 0.75rem 1.65rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none #000000 solid;
-    text-decoration-thickness: auto;
-    width: 200px;
-    max-width: 460px;
-    cursor: pointer;
-    transform: rotate(-2deg);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-  }
-  
-  .button-53:focus {
-    outline: 0;
-  }
-  
-  .button-53:after {
-    content: '';
-    border-radius: 20px;
-    position: absolute;
-    border: 1px solid #000000;
-    bottom: 4px;
-    left: 4px;
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
-  }
-  
-  .button-53:hover:after {
-    bottom: 2px;
-    left: 2px;
-  }
-  
-  /* CUSTOM CSS LOADER */
-  /* .custom-loader {
+/* MAIN START PAGE CSS */
+.logo {
+  margin-bottom: -12%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+img {
+  border-radius: 10%;
+}
+
+.visable-content {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+textarea {
+  flex-shrink: 8;
+  box-sizing: border-box;
+  resize: none;
+  text-wrap: wrap;
+  text-align: left;
+  width: 100%;
+  height: 80px;
+  font-family: "Lato", sans-serif;
+  outline: none;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+textarea:focus {
+  filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03))
+    drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgb(211, 144, 0);
+}
+
+textarea::placeholder {
+  font-size: 0.8rem;
+  color: #9c9c9c;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+/* MAIN START PAGE CSS - END SECTION */
+
+.bg-custom {
+  background-image: url("MovieWallpaper.jpg");
+  background-size: cover; /* or 'contain' based on your need */
+  background-position: center; /* Center the image */
+}
+
+/* Styled Button for Submit*/
+.button-53 {
+  align-self: flex-end;
+  background-color: #3de7a9;
+  border: 0 solid #e5e7eb;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: "Poetsen One", sans-serif, ui-sans-serif, system-ui,
+    -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.5rem;
+  font-weight: 200;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: 0.75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 200px;
+  max-width: 460px;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: "";
+  border-radius: 20px;
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+/* CUSTOM CSS LOADER */
+/* .custom-loader {
     z-index: 2;
     margin-top: 30%;
     width: 50px;
@@ -145,86 +145,84 @@
       transform: rotate(1turn)
     }
   } */
-  
 
-  /* MAIN START PAGE BUTTONS CSS (genre, mood+, toggle button ) */
-  .genre-button {
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    padding: 10px 20px;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #ddd;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .mood-button {
-    padding: 10px 20px;
-    width: 100%;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: #ddd;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .mood-button.Fun {
-    background-color: #ffff02;
-    color: rgb(0, 0, 0);
-  }
-  
-  .mood-button.Serious {
-    background-color: #c24315;
-    color: rgb(0, 0, 0);
-  }
-  
-  .mood-button.Inspiring {
-    background-color: #11ffdb;
-    color: rgb(0, 0, 0);
-  }
-  
-  .mood-button.Scary {
-    background-color: #39007b;
-    color: rgb(0, 0, 0);
-  }
-  
-  .toggle-button {
-    padding: 10px 20px;
-    font-family: 'Lato', sans-serif;
-    font-weight:bold;
-    width: 100%;
-    border-radius: 10px;
-    background-color: #ddd;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .toggle-button.new {
-    background-color: #aa4caf;
-    color: rgb(0, 0, 0);
-  }
-  
-  .toggle-button.classic {
-    background-color: #36b5f4;
-    color: rgb(0, 0, 0);
-  }
-  
+/* MAIN START PAGE BUTTONS CSS (genre, mood+, toggle button ) */
+.genre-button {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ddd;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.mood-button {
+  padding: 10px 20px;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #ddd;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.mood-button.Fun {
+  background-color: #ffff02;
+  color: rgb(0, 0, 0);
+}
+
+.mood-button.Serious {
+  background-color: #c24315;
+  color: rgb(0, 0, 0);
+}
+
+.mood-button.Inspiring {
+  background-color: #11ffdb;
+  color: rgb(0, 0, 0);
+}
+
+.mood-button.Scary {
+  background-color: #39007b;
+  color: rgb(0, 0, 0);
+}
+
+.toggle-button {
+  padding: 10px 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ddd;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-button.new {
+  background-color: #aa4caf;
+  color: rgb(0, 0, 0);
+}
+
+.toggle-button.classic {
+  background-color: #36b5f4;
+  color: rgb(0, 0, 0);
+}
 
 .prompt::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
- 
+
 .prompt::-webkit-scrollbar-thumb {
   background-color: #b5ca2b;
   border-radius: 5px;
