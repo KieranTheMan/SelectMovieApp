@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./Style.css";
+import "./Index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Start from "./Start.jsx";
 import AiResponse from "./AiResponse.jsx";
