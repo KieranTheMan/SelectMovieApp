@@ -10,7 +10,7 @@ function Start() {
   const [newClassic, setNewClassic] = useState("");
   const [genreIdx, setgenreIdx] = useState(0);
   const [isToggled, setIsToggled] = useState(false);
-  
+
   const genres = [
     "Action",
     "Comedy",
@@ -21,7 +21,7 @@ function Start() {
     "Horror",
   ];
   const moods = ["Fun", "Serious", "Inspiring", "Scary"];
-  
+
   let mainQuery = `${userQuery}, I want to watch something ${moods[moodIdx]}, I want to watch a ${newClassic} movie, I like ${genres[genreIdx]} movies`;
 
   let moodColor;
@@ -89,23 +89,32 @@ function Start() {
 
   return (
     <>
-      <div className='userInterfaceBG'>
-        <img className='logo' src={logo} alt='movie logo' />
+      <section className="max-w-lg mx-auto border-4 border-blue-500 p-5 rounded-3xl shadow-2xl bg-gray-600">
+        <div class="w-full h-80 mb-5 -mt-[30px] xs:mt-5 sm:mt-5 overflow-hidden">
+          <img
+            className="object-cover w-full h-full"
+            src={logo}
+            alt="movie logo"
+          />
+        </div>
 
-        <div className='textBoxes'>
-          <div>
-            <p className='start-p'>What's your favourite movie and why?</p>
-
+        <div className="flex flex-col">
+          <div className="my-3 -mt-16 xs:-mt-5 sm:-mt-5">
+            <p className="mt-2 pl-2 pb-3 text-gray-50 text-[16px] max-w-[500px] font-semibold">
+              What's your favourite movie and why?
+            </p>
+          
             <textarea
-              name='userInput'
+              name="userInput"
               value={userQuery}
               onChange={(e) => setUserQuery(e.target.value)}
-              maxLength='115'
-              placeholder='The Pursuit of Happiness because it taught me to never give up hope no matter how hard life gets'
+              maxLength="115"
+              placeholder="The Pursuit of Happiness because it taught me to never give up hope no matter how hard life gets"
+              className="mt-2 p-2 text-gray-950 text-[16px] max-w-[500px] overflow-hidden font-medium"
             />
-          </div>
-          <div>
-            <p className='start-p'>
+            </div>
+
+            <p className="mt-2 pl-2 pb-3 text-gray-50 text-[16px] max-w-[500px]">
               {" "}
               Are you in the mood for A New or Classic movie?
             </p>
@@ -116,30 +125,38 @@ function Start() {
               {isToggled ? "New" : "Classic"}
             </button>
 
-            <p className='start-p'> What are you in the mood for ?</p>
+            <p className="mt-2 pl-2 pb-3 text-gray-50 text-[16px] max-w[500px]">
+              {" "}
+              What are you in the mood for ?
+            </p>
             <button onClick={moodChange} className={`mood-button ${moodColor}`}>
               {moods[moodIdx]}
             </button>
-
-            <p className='start-p'> What movie genres do you like ?</p>
-            <button onClick={genreChange} className={"genre-button"}>
-              {genres[genreIdx]}
-            </button>
+            <div className="mt-7">
+              <p className="mt-2 pl-2 pb-3 text-gray-50 text-[16px] max-w-[500px]">
+                {" "}
+                What movie genres do you like ?
+              </p>
+              <button onClick={genreChange} className={"genre-button"}>
+                {genres[genreIdx]}
+              </button>
+            
           </div>
         </div>
-
-        <button
-          disabled={!userQuery}
-          style={{ paddingTop: 20 }}
-          className='button-53'
-          onClick={() => {
-            getResponse();
-            navigate("response");
-          }}
-        >
-          Let's Go
-        </button>
-      </div>
+        <div className="-mt-6 mb-6">
+          <button
+            disabled={!userQuery}
+            style={{ paddingTop: "12px" }}
+            className="button-53"
+            onClick={() => {
+              getResponse();
+              navigate("response");
+            }}
+          >
+            Let's Go
+          </button>
+        </div>
+      </section>
     </>
   );
 }
