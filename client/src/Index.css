@@ -2,39 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* body {
-    height: 100%;
-    width: auto;
-    margin: auto;
-    user-select: none;
-  } */
-  
+  /* MAIN START PAGE CSS */
   .logo {
     margin-bottom: -12%;
     max-height: 100%;
     max-width: 100%;
   }
   
-  #aimessage {
-  
-  
-    border: 2px solid rgba(221, 160, 221, 0.254);
-    border-spacing: 20px;
-    border-radius: 5%;
-    border-style: dashed;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-left: 5%;
-    margin-right: 5%;
-  }
-  
   img {
-    /* display: flex;
-    flex-direction: column;
-    margin: auto; */
     border-radius: 10%;
   }
   
@@ -48,62 +23,18 @@
     pointer-events: none;
   }
   
-  #aiimage {
-    flex: flex;
-    justify-content: center;
-    width: 100%;
-  
-  }
-  
-  #aiTitle {
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-size: 200%;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    font-style: normal;
-  
-  }
-  
-  h1 {
-    font-family: "Poetsen One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .start-p {
-    margin-top: 5%;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-wrap: wrap;
-    text-align: left;
-    margin-left: 5%;
-    margin-right: 5%;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
-  }
-  
-  .textBoxes {
-    display: flex;
-    flex-direction: column;
-  }
   
   textarea {
     flex-shrink: 8;
     box-sizing: border-box;
     resize: none;
     text-wrap: wrap;
-    font-size: 0.75rem;
     text-align: left;
     width: 100%;
     height: 80px;
     font-family: "Lato", sans-serif;
-    font-weight: 400px;
-    font-style: normal;
     outline: none;
     border-radius: 0.375rem;
-    /* padding: 0.4rem; */
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   }
   
@@ -121,80 +52,16 @@
     font-style: normal;
   
   }
-  
-  .back-Image {
-    display: flex;
-    flex-direction: column;
-    background-image: url("MovieWallpaper.jpg");
-    background-color: rgb(34, 34, 34);
-    width: 100%;
-    height: 145vh;
-    margin: auto;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+ /* MAIN START PAGE CSS - END SECTION */
+ 
+  .bg-custom {
+    background-image: url('MovieWallpaper.jpg');
+    background-size: cover; /* or 'contain' based on your need */
+    background-position: center; /* Center the image */
   }
   
   
-  .userInterfaceBG {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    background-color: rgb(117, 117, 176);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    border-radius: 1rem;
-    height: 100%;
-    margin-top: 2%;
-    margin-bottom: 20%;
-    padding-bottom: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 80%;
-    max-width: 24vw;
-  
-  
-    /* max-width: 10vw; */
-    /* padding-bottom: 3px;
-  padding-top: 40px; */
-  
-  }
-  
-  .ex-userInterfaceBG {
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    background-color: rgb(117, 117, 176);
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    border-radius: 1rem;
-    height: 100%;
-    /* margin: auto; */
-    margin-top: 2%;
-    margin-bottom: 15%;
-    padding-bottom: 2%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 80%;
-    max-width: 20vw;
-    min-height: 90vh;
-  
-    /* max-width: 10vw; */
-    /* padding-bottom: 3px;
-    padding-top: 40px; */
-  
-  }
-  
-  
-  #buttonPosition {
-    align-self: flex-end;
-  
-  }
-  
-  /* Styled Button */
+  /* Styled Button for Submit*/
   .button-53 {
     align-self: flex-end;
     background-color: #3de7a9;
@@ -245,7 +112,8 @@
     left: 2px;
   }
   
-  .custom-loader {
+  /* CUSTOM CSS LOADER */
+  /* .custom-loader {
     z-index: 2;
     margin-top: 30%;
     width: 50px;
@@ -276,9 +144,13 @@
     100% {
       transform: rotate(1turn)
     }
-  }
+  } */
   
+
+  /* MAIN START PAGE BUTTONS CSS (genre, mood+, toggle button ) */
   .genre-button {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     padding: 10px 20px;
     width: 100%;
     border-radius: 10px;
@@ -293,6 +165,8 @@
   .mood-button {
     padding: 10px 20px;
     width: 100%;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
     border-radius: 10px;
     background-color: #ddd;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -324,7 +198,8 @@
   
   .toggle-button {
     padding: 10px 20px;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-weight:bold;
     width: 100%;
     border-radius: 10px;
     background-color: #ddd;
@@ -345,63 +220,12 @@
     color: rgb(0, 0, 0);
   }
   
-  
-  
-  /* @media screen and (max-width: 600px) {
-    p {
-      margin-left: 10%;
-      margin-right: 10%;
-    }
-  
-    textarea {
-      margin-left: 1%;
-      margin-right: 1%;
-      width: 16rem;
-  
-    }
-  
-    .userInterfaceBG {
-      width: 80%;
-      min-width: 95vw;
-      margin-bottom: 5%;
-  
-    }
-  
-    .ex-userInterfaceBG {
-      width: 90%;
-      max-width: 70vw;
-      margin-bottom: 30%;
-  
-    }
-  
-    .button-53 {
-      padding: 0.75rem 3rem;
-      font-size: 1.25rem;
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-bottom: 20%;
-      width: 100%;
-      max-width: 460px;
-    }
-  
-  } */
-
-
-
-
-
-@media screen and (min-width: 480px) {
-    /* .card:nth-child(7n + 1) {
-        grid-column: auto/span 2;
-        grid-row: auto/span 2;
-    } */
-}
 
 .prompt::-webkit-scrollbar {
     width: 5px;
 }
  
 .prompt::-webkit-scrollbar-thumb {
-  background-color: #666e75;
+  background-color: #b5ca2b;
   border-radius: 5px;
 }
