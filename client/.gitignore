@@ -21,8 +21,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-./config.js
-*.config.js
-config.js
+# ./config.js
+# *.config.js
+# config.js
 .txt
 
