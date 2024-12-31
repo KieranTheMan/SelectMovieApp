@@ -1,0 +1,40 @@
+-- Create a table to store your documents
+create table documents (
+  id bigserial primary key,
+  content text, -- corresponds to the "text chunk"
+  embedding vector(1536) -- 1536 works for OpenAI embeddings
+);
+
+simularity search function
+-- Create a function to search for documents
+create or replace function match_documents (
+  query_embedding vector(1536),
+  match_threshold float,
+  match_count int
+)
+returns table (
+  id bigint,
+  content text,
+  similarity float
+)
+language sql stable
+as $$
+  select
+    documents.id,
+    documents.content,
+    1 - (documents.embedding <=> query_embedding) as similarity
+  from documents
+  where 1 - (documents.embedding <=> query_embedding) > match_threshold
+  order by similarity desc
+  limit match_count;
+$$;
+
+
+curl -X POST 'https://nwukywxychxoxpelmssy.supabase.co/rest/v1/movies' \
+  -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53dWt5d3h5Y2h4b3hwZWxtc3N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU1MDM5NjcsImV4cCI6MjA1MTA3OTk2N30.SAqsuObaYq8KuVlSr9X2tybU0e2vB6iWGadTUagDzPQ" \
+  -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53dWt5d3h5Y2h4b3hwZWxtc3N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU1MDM5NjcsImV4cCI6MjA1MTA3OTk2N30.SAqsuObaYq8KuVlSr9X2tybU0e2vB6iWGadTUagDzPQ" \
+  -H "Content-Type: application/json" \
+  -d '{
+        "content": "Test movie description",
+        "embedding": [0.1, 0.2, 0.3]
+      }'
