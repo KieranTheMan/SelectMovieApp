@@ -42,7 +42,7 @@ function Start() {
   const buttonChange = () => {
     setIsToggled(!isToggled);
     !isToggled
-      ? newClassic("im in the mood for a New movie")
+      ? setNewClassic("im in the mood for a New movie")
       : setNewClassic("im in the mood for a Classic movie");
   };
 
@@ -90,7 +90,7 @@ function Start() {
   return (
     <>
       <section className="min-h-screen max-w-lg mx-auto border-4 border-blue-500 p-5 rounded-3xl shadow-2xl bg-gray-600">
-        <div class="w-full h-80 mb-5 -mt-[30px] xs:mt-5 sm:mt-5 overflow-hidden">
+        <div className="w-full h-80 mb-5 -mt-[30px] xs:mt-5 sm:mt-5 overflow-hidden">
           <img
             className="object-cover w-full h-full"
             src={logo}
