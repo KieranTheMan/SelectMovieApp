@@ -8,7 +8,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: "https://movieselekta.onrender.com/",
 };
 
 app.use(cors(corsOptions));
