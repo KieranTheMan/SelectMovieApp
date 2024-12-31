@@ -53,7 +53,7 @@ textarea::placeholder {
 /* MAIN START PAGE CSS - END SECTION */
 
 .bg-custom {
-  background-image: url("./dist/assets/MovieWallpaper.jpg");
+  background-image: url("./src/assets/MovieWallpaper.jpg");
   background-size: cover; /* or 'contain' based on your need */
   background-position: center; /* Center the image */
 }
