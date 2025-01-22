@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -63,28 +63,51 @@ function Start() {
       headers: {
         "Content-Type": "application/json",
       },
-    };
+    }; 
     try {
       const response = await fetch("https://movieselekt.onrender.com/userquery", options);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const { title, image, message } = await response.json();
-      console.log(`client text response ${message}`);
-      document.getElementById("aimessage").innerHTML = message;
-      console.log(`client IMAGE response ${image}`);
-      document.getElementById("aiTitle").innerHTML = title;
+      if (title) {
+        document.getElementById("aiTitle").innerHTML = title;
+      } else {
+        console.log("no ai title");
+      }
+      const textContainer = document.getElementById("aimessage");
+      if (message) {
+        console.log(`client text response ${message}`);
+        const textElement = document.createElement("p");
+        textElement.className =
+          "mt-9 rounded-lg font-custom font-thin p-3 shadow-2xl shadow-black bg-slate-300 bg-opacity-2";
+        textElement.innerText = message;
+        textContainer.appendChild(textElement);
+      } else {
+        console.log("no aimessage");
+      }
 
-      // The base URL for TMDb images
-      const baseImageUrl = "https://image.tmdb.org/t/p/w300";
-      const imageUrl = `${baseImageUrl}${image}`;
-      const imgElement = document.createElement("img");
-      imgElement.src = imageUrl;
+      const imageContainer = document.getElementById("aiimage");
+      if (image) {
+        const baseImageUrl = "https://image.tmdb.org/t/p/w300";
+        const imageUrl = `${baseImageUrl}${image}`;
 
-      const container = document.getElementById("aiimage");
-      container.appendChild(imgElement);
+        // Clear existing images to avoid appending duplicates
+        imageContainer.innerHTML = "";
+
+        // Create and append the new image element
+        const imgElement = document.createElement("img");
+        imgElement.src = imageUrl;
+        imgElement.alt = "Movie Poster";
+        imgElement.className = "border rounded-lg shadow-md block mb-5 mt-1 mx-auto w-auto sm:w-80";
+        imageContainer.appendChild(imgElement);
+      } else {
+        console.log("No AI image found for this movie");
+        //Clear the container if no image exists
+        imageContainer.innerHTML = "";
+      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("An error occurred while fetching the data:", error);
     }
   };
 
