@@ -1,17 +1,8 @@
 import { openai, supabase, moviedb } from "../config.js";
-import express from "express";
 
-//Allows the  server to accept requests from localhost properly
-import cors from "cors";
 //To help process form data or handle JSON in API requests.
 import bodyParser from "body-parser";
 
-const app = express();
-const corsOptions = {
-  origin: "https://movieselekta.onrender.com",
-};
-
-app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 export default app.post("/userquery", async (req, res) => {
