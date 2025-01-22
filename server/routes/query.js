@@ -1,8 +1,8 @@
 import { openai, supabase, moviedb } from "../config.js";
-
+import express from "express";
 //To help process form data or handle JSON in API requests.
 import bodyParser from "body-parser";
-
+const app = express();
 app.use(bodyParser.json());
 
 export default app.post("/userquery", async (req, res) => {
