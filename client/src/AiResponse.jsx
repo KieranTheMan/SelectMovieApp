@@ -1,10 +1,11 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 import Loader from "./Loader";
 
 function AiResponse() {
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,11 +30,9 @@ function AiResponse() {
             />
             <div
               id="aiimage"
-              className="block mb-5 mt-1 mx-auto w-auto sm:w-80"
             />
-            <p
+            <div
               id="aimessage"
-              className="mt-9 rounded-lg font-custom font-thin p-3 shadow-2xl shadow-black bg-slate-300 bg-opacity-2"
             />
             <div>
               <button
