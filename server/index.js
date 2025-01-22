@@ -4,7 +4,13 @@ import getEmbedding from "./routes/Embedding.js";
 import query from "./routes/query.js";
 
 const app = express();
-app.use(cors());
+const corsOptions = {
+  origin: "https://movieselekta.onrender.com",
+  methods: ["GET", "POST"],
+  allowedHeaders:"Content-Type",
+};
+
+app.use(cors(corsOptions));
 //app.use(express.json({ limit: "50mb" }));
 
 //TextSplit & Embedding MovieList and updates supabase database
