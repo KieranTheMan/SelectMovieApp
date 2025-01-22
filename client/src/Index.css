@@ -9,9 +9,9 @@
   max-width: 100%;
 }
 
-img {
+/* img {
   border-radius: 10%;
-}
+} */
 
 .visable-content {
   transition: opacity 0.2s ease-in-out;
