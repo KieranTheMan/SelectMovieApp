@@ -93,7 +93,7 @@ function Start() {
         const imageUrl = `${baseImageUrl}${image}`;
 
         // Clear existing images to avoid appending duplicates
-        imageContainer.innerHTML = "";
+        //imageContainer.innerHTML = "";
 
         // Create and append the new image element
         const imgElement = document.createElement("img");
