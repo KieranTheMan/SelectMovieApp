@@ -10,7 +10,7 @@ function AiResponse() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, 20000);
   }, []);
 
   const navigate = useNavigate();
